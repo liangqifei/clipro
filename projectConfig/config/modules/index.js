@@ -7,15 +7,23 @@ const ModuleConfig = (mode) => {
 const generateLoaders = (mode,types = ['less'],) => {
    const isProductionMode=mode=='production'
    const classRules=[{
-      test: /\.(less|css)$/,
+      test: /\.less$/,
       exclude: /node_modules/,
       use: [
          isProductionMode ? MiniCssExtractPlugin.loader : 'style-loader',
          'css-loader',
          {
             loader:'less-loader',
-            
          },
+         'postcss-loader'
+      ]
+   },
+   {
+      test: /\.css$/,
+      exclude: /node_modules/,
+      use: [
+         isProductionMode ? MiniCssExtractPlugin.loader : 'style-loader',
+         'css-loader',
          'postcss-loader'
       ]
    }]

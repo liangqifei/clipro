@@ -16,6 +16,7 @@
     "@vue/babel-plugin-jsx": "^1.1.1",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
+    "babel-plugin-import": "^1.13.3",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
     "less": "^4.1.2",

@@ -3,13 +3,32 @@ const common = require('./webpack.common.js');
 const PluginConfig= require('./config/plugins')
 const ModuleConfig= require('./config/modules')
 
-module.exports = merge(common, {
+ const devConfig= merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   plugins: PluginConfig('development'),
   module:{
     rules:[
-      ...ModuleConfig(),
+      // ...ModuleConfig(),
+      {
+        test: /\.less$/,
+        use: [
+           'style-loader',
+           'css-loader',
+           {
+              loader:'less-loader',
+           },
+           'postcss-loader'
+        ]
+     },
+     {
+        test: /\.css$/,
+        use: [
+           'style-loader',
+           'css-loader',
+           'postcss-loader'
+        ]
+     },
       {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
@@ -36,3 +55,5 @@ module.exports = merge(common, {
     },
   },
 });
+console.log(devConfig)
+module.exports=devConfig
