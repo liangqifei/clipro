@@ -7,8 +7,11 @@ module.exports = {
         clean: true,
     },
     resolve: {
-        extensions: ['.js', '.jsx']
-      },
+        extensions: ['.js', '.jsx'],
+        alias:{
+            '@':'/src/*'
+        }
+    },
     // optimization: {
     //     runtimeChunk: 'single',
     //     splitChunks: {

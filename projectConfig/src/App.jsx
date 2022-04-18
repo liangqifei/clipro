@@ -5,7 +5,6 @@ import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 dayjs.locale('zh-cn');
 import './App.less'
-import AppLayout from "./layout";
 const App = defineComponent({
   setup() {
     const locale=ref({
@@ -14,7 +13,7 @@ const App = defineComponent({
   
     return () => (
         <ConfigProvider locale={locale}>
-            <AppLayout></AppLayout>
+           <RouterView></RouterView>
         </ConfigProvider>
     );
   },

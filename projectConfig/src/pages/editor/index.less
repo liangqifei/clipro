@@ -1,0 +1,51 @@
+@headerHeight: 50px;
+@menuMaxWidth: 180px;
+@menuMinWidth: 80px;
+.editor-body {
+    .editor-header{
+        height: @headerHeight;
+        background-color: #fff;
+        box-shadow: 0 3px 20px #00000012;
+        border-bottom: 1px solid #eee;
+        position: fixed;
+        z-index: 1;
+        left:0;
+        right:0;
+        top:0;
+    }
+    
+    .editor-content {
+        display: flex;
+        height:calc(100vh - @headerHeight);
+        top:@headerHeight;
+        position: fixed;
+        .editor-menu{
+            .ant-menu{
+                min-height:100%;
+            }
+            .menu-open-icon{
+                height: @headerHeight;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+            background-color: #fff;
+
+        }
+        .editor-menu.opened{
+            width:@menuMaxWidth;
+
+        }
+        .editor-menu.closed{
+            width:@menuMinWidth;
+            .ant-menu.ant-menu-inline-collapsed {
+                width:@menuMinWidth;
+            }
+        }
+        .editor-content-main{
+            flex:1 auto;
+            height:100%;
+            display: flex;
+        }
+    }
+}
