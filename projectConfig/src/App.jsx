@@ -10,6 +10,7 @@ const App = defineComponent({
     const locale=ref({
         locale: zhCN
     })
+   
   
     return () => (
         <ConfigProvider locale={locale}>

@@ -1,4 +1,4 @@
-export const buttonProps = () => ({
+export const basicProps = () => ({
     type: {
         type:String,
         default:'default'

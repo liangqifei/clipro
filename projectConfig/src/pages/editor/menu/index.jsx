@@ -33,7 +33,6 @@ export default defineComponent({
             state.openKeys = state.collapsed ? [] : state.preOpenKeys;
         };
         const menuSelect=({ item, key, selectedKeys })=>{
-            debugger
             emit('leftTypeChange',{ item, key, selectedKeys })
         }
       return () => (
